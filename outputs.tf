@@ -13,11 +13,6 @@ output "cloudbuild_worker_pool_name" {
   value       = google_cloudbuild_worker_pool.pool.name
 }
 
-output "cloudbuild_trigger_name" {
-  description = "The name of the Cloud Build trigger"
-  value       = google_cloudbuild_trigger.build-trigger.name
-}
-
 output "workerpool_id" {
   value = google_cloudbuild_worker_pool.pool.id
 }
