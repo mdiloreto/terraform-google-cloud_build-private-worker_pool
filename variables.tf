@@ -69,3 +69,13 @@ variable "cb_repo_name" {
 variable "cb_repo_type" {
   type = string
 }
+
+variable "vpc_network" {}
+variable "alloc_range_address" {}
+variable "cb_rollback_trigger_name" {}
+variable "cb_rollback_repo_name" {}
+
+variable "substitutions" {
+  description = "A map of substitutions to be used in the build"
+  type        = map(string)
+}
