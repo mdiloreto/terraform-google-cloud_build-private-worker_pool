@@ -15,23 +15,13 @@ variable "network" {
 }
 
 variable "cb_region" {
-  description = "The location for the worker pool and build trigger"
+  description = "The location for the worker pool "
   type        = string
 }
 
 variable "marchine_type" {
   description = "The machine type for the worker pool"
   default = "e2-medium"
-  type        = string
-}
-
-variable "cb_trigger_name" {
-  description = "The name of the Cloud Build trigger"
-  type        = string
-}
-
-variable "cb_filename" {
-  description = "The filename for the Cloud Build trigger"
   type        = string
 }
 
@@ -55,27 +45,18 @@ variable "purpose" {
   default = "VPC_PEERING"
 }
 
-variable "prefix_length" {
+variable "allocation_prefix_length" {
+  description = "Prefix length to be determined in the in the VPC Private Service IP Allocation"
   default = "16"
 }
-variable "cb_ref" {
-  default = "refs/heads/main"
+
+variable "cb_prefix_length" {
+  description = "The prefix length used for Cloud Build within the worker pool."
+  default = "24"
 }
 
-variable "cb_repo_name" {
-  type = string
+variable "alloc_range_address" {
+    description = "IP Address Range to be determined in the in the VPC Private Service IP Allocation"
+
 }
 
-variable "cb_repo_type" {
-  type = string
-}
-
-variable "vpc_network" {}
-variable "alloc_range_address" {}
-variable "cb_rollback_trigger_name" {}
-variable "cb_rollback_repo_name" {}
-
-variable "substitutions" {
-  description = "A map of substitutions to be used in the build"
-  type        = map(string)
-}
