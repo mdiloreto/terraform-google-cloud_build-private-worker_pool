@@ -38,6 +38,7 @@ provider "google-beta" {
   project = var.project_id
   region  = var.region
 }
+```
 
 ## Module Inputs
 
@@ -90,6 +91,9 @@ module "cloud_build_private_worker_pool" {
   peering_export_custom_routes = true
   peering_import_custom_routes = false
 }
+
+```
+
 Ensure to replace placeholder values with actual data relevant to your GCP setup.
 
 ## Contributing
