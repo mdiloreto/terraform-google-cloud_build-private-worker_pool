@@ -14,6 +14,11 @@ variable "network" {
   type        = string
 }
 
+variable "network_id" {
+  description = "The VPC network ID to use"  
+}
+
+
 variable "cb_region" {
   description = "The location for the worker pool "
   type        = string
@@ -60,3 +65,21 @@ variable "alloc_range_address" {
 
 }
 
+variable "workerpool_range_name" {
+  description = "IP Range for the Private Access Connection for the Cloud Build reservation"
+}
+
+variable "reserved_peering_ranges" {
+  description = "Reserved IP Allocated ranges for the NewtworkingServicesConnection API. This must include the workerpool_range name and other ranges that already exists in the existing connection"
+  type = list(string)
+}
+
+variable "peering_import_custom_routes" {
+  type = bool
+  description = "Set this value True if you want to import the custom routes from the VPC to the Service Provider Network"
+}
+
+variable "peering_export_custom_routes" {
+  type = bool
+  description = "Set this value True if you want to export the custom routes from the VPC to the Service Provider Network"
+}
